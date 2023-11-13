@@ -8,6 +8,6 @@
 std::string getUserInput();
 
 // process user input and perform corresponding work
-void processUserInput();
+void Menu();
 
 #endif
