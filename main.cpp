@@ -6,9 +6,6 @@ using namespace std;
 
 int main()
 {
-    vector<Task> tasks;          // task object where information will be stored
-    if (processUserInput(tasks)) // returns 1 (true) if quit command called
-        cout << "Thanks for using my app! - Chris Barry" << endl;
-
+    Menu(); // starts the menu, exits when user runs 'quit'
     return 0;
 }
