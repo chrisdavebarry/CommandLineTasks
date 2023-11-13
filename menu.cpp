@@ -30,6 +30,10 @@ void Menu()
 		
 				cout << "Give a description for this task: ";
 				cin >> taskDescription;
+				
+				cout << "What priority does this task have?" << endl;
+				cout << "Enter 'high', 'medium', 'low', or 'none': ";
+				cin >> taskPriority;
 			}
 			else if (userCommand == "delete")
 			{
