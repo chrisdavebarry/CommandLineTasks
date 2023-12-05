@@ -15,10 +15,10 @@ gcc -c sqlite3.c -o sqlite3.o
 g++ main.cpp menu.cpp sqlite3.o -o CommandLineTasks
 ```
 
-To run the program, use the following command:
-'''bash
-CommandLineTasks
-'''
+To run the program, just run the compiled object file from the command line on your OS (linux below):
+```bash
+./CommandLineTasks
+```
 
 ### To Do
 
