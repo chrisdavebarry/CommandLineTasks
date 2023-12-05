@@ -22,8 +22,6 @@ CommandLineTasks
 
 ### To Do
 
-- implement initDB() in main.cpp;
-  - add to SQlite database??? database stored in the project directory?
 - Implement printTaskList() in menu.cpp;
   - Sorting options - sort by priority level (asc. or desc.), sort by task id (asc or desc), sort by due date (asc or desc)
   - Allow users to print only certain priorities of tasks (i.e print only low priority tasks)
