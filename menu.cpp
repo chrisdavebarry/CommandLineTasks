@@ -1,40 +1,60 @@
 #include <iostream>
-#include <vector>
-#include "task.h"
 #include "menu.h"
 using namespace std;
 
 string getUserInput()
 {
-    cout << ">>>>";
-    string userCommand;
-    cin >> userCommand;
-    for (char &c : userCommand) // convert whole cmd to lowercase
-        c = tolower(c);
-    return userCommand;
+	cout << ">>>>";
+	string userCommand;
+	cin >> userCommand;
+	for (char &c : userCommand) // convert whole cmd to lowercase
+		c = tolower(c);
+	return userCommand;
+}
+
+void addTask(string taskDescription, string taskPriority, string dueDate)
+{
+}
+
+void deleteTask(string idNumber)
+{
+}
+
+void editTask(string idNumber)
+{
+}
+
+void printTaskList(string sortingType)
+{
 }
 
 void Menu()
 {
-    string userCommand = getUserInput();
-    while (userCommand != "quit")
-    {
-        if (userCommand == "task")
-        {
+	string userCommand = getUserInput();
+	while (userCommand != "quit")
+	{
+		if (userCommand == "help")
+		{
+			cout << "===== Command List: =====" << endl;
+			cout << "'help' - view command list" << endl;
+			cout << "'task' - begin a task command sequence" << endl;
+		}
+		else if (userCommand == "task")
+		{
 			cout << "Task Menu: would you like to add, delete, or print tasks?" << endl;
 			cout << "Enter 'add', 'delete' or 'print' to continue..." << endl;
 			userCommand = getUserInput();
-            if (userCommand == "add")
-			{	
+			if (userCommand == "add")
+			{
 				string taskDescription, taskPriority, dueDate;
-		
+
 				cout << "Give a description for this task: ";
 				cin >> taskDescription;
-				
+
 				cout << "What priority does this task have?" << endl;
 				cout << "Enter 'high', 'medium', 'low', or 'none': ";
 				cin >> taskPriority;
-				
+
 				cout << "What date should this task be completed before?" << endl;
 				cout << "Enter a date in format XX/XX/XXXX (i.e 01/01/2000), or 'none' for no due-date: ";
 				cin >> dueDate;
@@ -45,7 +65,7 @@ void Menu()
 			else if (userCommand == "delete")
 			{
 				string idNumber;
-				printTaskList();
+				printTaskList("idAsc");
 				cout << "Which task would you like to delete? (enter ID number from above list): ";
 				cin >> idNumber;
 
@@ -54,7 +74,7 @@ void Menu()
 			else if (userCommand == "edit")
 			{
 				string idNumber;
-				printTaskList("ID");
+				printTaskList("idAsc");
 				cout << "Which task would you like to edit? (enter ID number from above list): ";
 				cin >> idNumber;
 
@@ -72,16 +92,15 @@ void Menu()
 				cin >> sortingType;
 				printTaskList(sortingType);
 			}
-			else // catch 
+			else // catch
 			{
 				cout << "Incorrect command, '" << userCommand << "', please try again..." << endl;
-			}	
-				
-        }
-        else // catch
-        {
-           cout << "Incorrect command, '" << userCommand << "' please try again..." << endl;
-        }
-        userCommand = getUserInput(); // get next user command
-    }
+			}
+		}
+		else // catch
+		{
+			cout << "Incorrect command, '" << userCommand << "' please try again..." << endl;
+		}
+		userCommand = getUserInput(); // get next user command
+	}
 }
