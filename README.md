@@ -1,6 +1,6 @@
 # CommandLineTasks
 
-A CLI task tracking app written in C++ that allows users to add, delete, edit, and list tasks.
+A portable CLI task tracking app written in C++ that allows users to add, delete, edit, and list tasks into a SQLite3 database.
 
 Each task holds a few properties - task ID (integer starting at 1), task description, task priority (high medium low), and task due date.
 
