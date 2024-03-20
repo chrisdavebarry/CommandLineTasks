@@ -22,6 +22,7 @@ To run the program, just run the compiled object file from the command line on y
 
 ### To Do
 
+- Reformat project to use MySQL or MariaDB
 - Implement printTaskList() in menu.cpp;
   - Sorting options - sort by priority level (asc. or desc.), sort by task id (asc or desc), sort by due date (asc or desc)
   - Allow users to print only certain priorities of tasks (i.e print only low priority tasks)
