@@ -1,2 +1,6 @@
-task.exe
-.vscode/
+.vs/
+sqlite/tasks.db
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user

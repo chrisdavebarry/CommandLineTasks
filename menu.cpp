@@ -1,6 +1,39 @@
 #include <iostream>
+#include "sqlite3.h"
+#include <stdio.h>
 #include "menu.h"
 using namespace std;
+
+bool executeSQL(string executeString)
+{
+	sqlite3* DB;
+	char* messageError;
+	int exit = sqlite3_open("tasks.db", &DB);
+
+	if (exit)
+	{
+		sqlite3_close(DB);
+		return false;
+	}
+	else
+	{
+		string sql(executeString);
+
+		exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+		if (exit != SQLITE_OK)
+		{
+			sqlite3_free(messageError);
+			sqlite3_close(DB);
+			return false;
+		}
+		else
+		{
+			sqlite3_close(DB);
+			return true;
+		}
+	}
+}
 
 string getUserInput()
 {
